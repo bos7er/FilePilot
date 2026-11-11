@@ -144,9 +144,21 @@ class SafetyTests(FolderScanTests):
 
     def test_recycle_moves_only_selected_file_via_send2trash(self):
         target = self.write("keep.txt", b"data")
-        with patch("send2trash.send2trash") as mock_trash:
-            recycle_file(str(target), str(self.root))
+        # The Windows CI temporary folder is inside LOCALAPPDATA, which
+        # FilePilot correctly protects. Simulate an ordinary user folder here.
+        with patch("filepilot.core.is_protected_windows_path", return_value=False):
+            with patch("send2trash.send2trash") as mock_trash:
+                recycle_file(str(target), str(self.root))
         mock_trash.assert_called_once_with(str(target))
+        self.assertTrue(target.exists())
+
+    def test_recycle_protected_windows_path_is_rejected(self):
+        target = self.write("keep.txt", b"data")
+        with patch("filepilot.core.is_protected_windows_path", return_value=True):
+            with patch("send2trash.send2trash") as mock_trash:
+                with self.assertRaises(ValueError):
+                    recycle_file(str(target), str(self.root))
+        mock_trash.assert_not_called()
         self.assertTrue(target.exists())
 
     def test_recycle_directory_not_allowed(self):
