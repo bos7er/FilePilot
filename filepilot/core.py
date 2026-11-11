@@ -218,10 +218,21 @@ def find_duplicates(
             unique: list[FileRecord] = []
             seen_inodes: set[tuple[int, int]] = set()
             for rec in sorted(matches, key=lambda f: f.path.casefold()):
-                identity = (rec.device, rec.inode)
-                if rec.inode and identity in seen_inodes:
+                # On Windows, os.DirEntry.stat() can return st_ino=0.
+                # os.stat(path) retrieves the real file identity, so hard links
+                # are not incorrectly listed as separate duplicate copies.
+                identity = (rec.device, rec.inode) if rec.inode else None
+                if identity is None:
+                    try:
+                        current = os.stat(rec.path, follow_symlinks=False)
+                        if (current.st_ino and current.st_size == rec.size
+                                and current.st_mtime_ns == rec.modified_ns):
+                            identity = (current.st_dev, current.st_ino)
+                    except OSError:
+                        pass
+                if identity is not None and identity in seen_inodes:
                     continue
-                if rec.inode:
+                if identity is not None:
                     seen_inodes.add(identity)
                 unique.append(rec)
             if len(unique) > 1:
