@@ -8,6 +8,14 @@ FilePilot helps you understand where your storage space went, spot oversized fil
 
 > Releases are available once the repository owner publishes the first Windows executable.
 
+## ☕ Support FilePilot
+
+If you like FilePilot, consider supporting its development!
+
+[![Buy Me a Coffee](https://img.shields.io/badge/☕_Buy_Me_a_Coffee-Donate_via_PayPal-blue?style=for-the-badge)](https://www.paypal.me/bos7er)
+
+
+
 ## Features
 
 - **Storage overview:** total file size, file count, scan duration, and folder space usage.
