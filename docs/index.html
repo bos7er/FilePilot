@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09121f">
+  <meta name="description" content="FilePilot is a free, offline disk analyzer and duplicate finder for Windows. See what's taking up your storage space.">
+  <title>FilePilot — Find Space. Take Control.</title>
+  <style>
+    :root{color-scheme:dark;--bg:#09121f;--panel:#122337;--light:#f2f7ff;--muted:#9fb4c6;--teal:#2be2ba}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#14334b 0,#09121f 49%);color:var(--light);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.55}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid #243d50}
+    .logo{color:var(--teal);font-weight:800;font-size:23px;letter-spacing:-.5px}.nav a{color:var(--muted);text-decoration:none;margin-left:20px}.nav a:hover{color:var(--light)}
+    .hero{text-align:center;padding:98px 0 88px}.badge{color:var(--teal);border:1px solid #256453;background:#103b37;display:inline-block;border-radius:100px;padding:7px 14px;font-size:13px;font-weight:700}
+    h1{font-size:clamp(44px,6.6vw,78px);line-height:1.09;letter-spacing:-3px;max-width:900px;margin:24px auto}h1 span{color:var(--teal)}.sub{font-size:19px;color:var(--muted);max-width:670px;margin:0 auto 30px}
+    .buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-top:29px}.btn{display:inline-block;border-radius:12px;padding:15px 23px;text-decoration:none;font-weight:800;transition:transform .18s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--teal);color:#081b21}.secondary{background:#192b3f;border:1px solid #38536a;color:var(--light)}
+    .note{color:#7f9cb2;margin-top:21px;font-size:13px}.preview{background:#0e1b2a;border:1px solid #2e5363;box-shadow:0 25px 90px #0006;border-radius:20px;max-width:850px;margin:30px auto 0;padding:20px;text-align:left}
+    .window-dots{display:flex;gap:7px;margin:0 0 20px}.window-dots i{background:#365164;border-radius:100%;height:10px;width:10px}.preview-title{color:var(--teal);font-size:20px;font-weight:800}.preview-sub{color:var(--muted);font-size:13px;margin-bottom:18px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.stat{padding:15px;background:#182c3d;border-radius:11px}.stat small{display:block;color:#9fb4c6;font-weight:700;font-size:11px}.stat strong{display:block;margin-top:6px;font-size:22px}.row{display:flex;justify-content:space-between;border-bottom:1px solid #253b4e;padding:13px 2px}.row em{color:#66e2c7;font-style:normal}
+    h2{font-size:36px;letter-spacing:-1.2px;text-align:center;margin:0 0 14px}.section-intro{text-align:center;color:var(--muted);max-width:650px;margin:0 auto 35px}.section{padding:74px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{padding:26px;background:linear-gradient(135deg,#152b3f,#102033);border:1px solid #284053;border-radius:17px}.icon{font-size:28px}.card h3{margin:15px 0 7px;font-size:18px}.card p{color:var(--muted);margin:0;font-size:15px}
+    .last{background:#12273a;border:1px solid #29465a;border-radius:20px;text-align:center;padding:50px 24px;margin-bottom:70px}.last p{color:var(--muted)}footer{display:flex;justify-content:space-between;color:#8ca7bc;border-top:1px solid #284053;padding:25px 0 35px;gap:15px;flex-wrap:wrap;font-size:13px}footer a{color:var(--teal)}
+    @media(max-width:750px){.cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding:70px 0 35px}.nav a{margin-left:11px}h1{letter-spacing:-1.5px}h2{font-size:29px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav"><div class="logo">◈ FilePilot</div><div><a href="#features">Features</a><a href="https://github.com/bos7er/FilePilot">GitHub</a></div></nav>
+    <section class="hero">
+      <div class="badge">FREE • OPEN SOURCE • WINDOWS 10/11</div>
+      <h1>Find Space.<br><span>Take Control.</span></h1>
+      <p class="sub">A modern disk analyzer that shows your largest files, uncovers duplicate content, and helps you reclaim storage safely. Everything stays on your PC.</p>
+      <div class="buttons"><a class="btn primary" href="https://github.com/bos7er/FilePilot/releases/latest">↓ Download for Windows</a><a class="btn secondary" href="https://github.com/bos7er/FilePilot">View Source Code →</a></div>
+      <p class="note">Portable .exe · No account required · No file uploads · Download available after first release</p>
+      <div class="preview" role="img" aria-label="Illustration of the FilePilot storage overview interface">
+        <div class="window-dots"><i></i><i></i><i></i></div><div class="preview-title">◈ FilePilot</div>
+        <div class="preview-sub">SMART STORAGE EXPLORER · Overview / Largest Files / Duplicates</div>
+        <div class="stats"><div class="stat"><small>FILES FOUND</small><strong>34,218</strong></div><div class="stat"><small>TOTAL FILE SIZE</small><strong>67.42 GB</strong></div><div class="stat"><small>FOLDERS</small><strong>1,426</strong></div></div>
+        <div style="font-weight:700;margin-top:24px;margin-bottom:7px">Folders using the most space</div>
+        <div class="row"><span>Videos</span><em>24.8 GB</em></div><div class="row"><span>Downloads</span><em>13.2 GB</em></div><div class="row"><span>Projects</span><em>8.4 GB</em></div>
+        <p class="note" style="margin-bottom:0">Illustrative sample values, not live storage measurements.</p>
+      </div>
+    </section>
+    <section class="section" id="features"><h2>Everything you need to inspect your storage</h2><p class="section-intro">See what's taking space without complicated tools, surprise deletions, or cloud services.</p>
+      <div class="cards">
+        <article class="card"><div class="icon">◫</div><h3>Folder Analytics</h3><p>Explore folder totals and locate storage hotspots with a quick scan.</p></article>
+        <article class="card"><div class="icon">▤</div><h3>Largest Files</h3><p>Sort by size and find the files taking up the most space on your PC.</p></article>
+        <article class="card"><div class="icon">◎</div><h3>True Duplicates</h3><p>Identify files with identical SHA-256 content, not just matching filenames.</p></article>
+        <article class="card"><div class="icon">♻</div><h3>Safe Cleanup</h3><p>Move one selected file to the Recycle Bin, always with confirmation.</p></article>
+        <article class="card"><div class="icon">↗</div><h3>CSV Reports</h3><p>Export file lists and duplicate findings for further review.</p></article>
+        <article class="card"><div class="icon">⌁</div><h3>Offline by Design</h3><p>No accounts, tracking, cloud uploads, or background services.</p></article>
+      </div>
+    </section>
+    <div class="last"><h2>Ready to make room?</h2><p>Free, open source, and built for Windows.</p><div class="buttons"><a class="btn primary" href="https://github.com/bos7er/FilePilot/releases/latest">Download FilePilot.exe</a></div></div>
+    <footer><span>© 2026 FilePilot contributors · MIT License</span><span><a href="https://github.com/bos7er/FilePilot">Source on GitHub</a> · <a href="https://github.com/bos7er/FilePilot/issues">Report an issue</a></span></footer>
+  </div>
+</body>
+</html>
